@@ -1,22 +1,34 @@
-# Header Images
+# Header Images - Quick Start
 
-Place your studio photos here!
+## 🎨 Add Your Header Image NOW:
 
-## For rotating homepage images:
+1. **Add ONE main image** to this folder: `header.jpg`
+   - This will be your homepage background (blurred with dark overlay)
+   - Any studio photo, painting in progress, workspace, etc.
 
-1. Add your images to this folder (e.g., `studio-1.jpg`, `studio-2.jpg`, etc.)
-2. The main image is set in `config/_default/params.toml` as `homepageImage`
-3. To rotate through multiple images, you can use the `images` array in front matter
+2. **Image specs:**
+   - Width: 1920px+ (or your photo's full resolution)
+   - Height: 1080px+
+   - Format: JPG
+   - Don't worry about file size too much - Hugo will optimize
 
-## Recommended:
-- Images of your studio (inside and out)
-- Close-ups of paints and materials
-- Your workspace
-- Natural wood textures
+## 📸 What makes a good header image:
 
-## Size recommendations:
-- Width: 1920px or larger
-- Height: 1080px or larger
-- Format: JPG or WebP
-- Keep file sizes under 500KB for fast loading
+- Studio workspace
+- Paintings in progress
+- Close-ups of paints/brushes
+- Natural light streaming in
+- Wood textures
+- Canvas details
+- Your easel
+
+The image will be blurred and darkened automatically to make text readable!
+
+## 🔄 For rotating images (later):
+
+You can add multiple images and configure rotation:
+- `header-1.jpg`, `header-2.jpg`, etc.
+- Update config to cycle through them
+
+But for now, just add ONE image called `header.jpg` and you're done!
 

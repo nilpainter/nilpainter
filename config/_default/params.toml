@@ -19,7 +19,7 @@ mainSections = ["blog", "projects"]
 # Homepage
 [homepage]
   layout = "background"
-  homepageImage = "img/studio.jpg"
+  homepageImage = "img/header.jpg"  # Add your header image to static/img/
   showRecent = true
   showRecentItems = 20
   showMoreLink = false
