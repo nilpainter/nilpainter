@@ -45,7 +45,7 @@
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
-        {{/* PROJECT CONTENT FIRST */}}
+        {{/* BLOG POST CONTENT - NO SERIES STUFF */}}
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
@@ -61,12 +61,10 @@
             </strong>
           {{ end }}
         </div>
-        {{/* THEN UPDATES */}}
-        {{ partial "series/series.html" . }}
+        {{/* NO SERIES, NO RELATED, NOTHING ELSE */}}
         {{ if (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
           {{ template "SingleAuthor" . }}
         {{ end }}
-        {{ partial "series/series-closed.html" . }}
         {{ partial "sharing-links.html" . }}
       </div>
 
