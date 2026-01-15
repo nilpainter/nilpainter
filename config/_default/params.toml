@@ -46,7 +46,7 @@ mainSections = ["blog", "projects"]
   showWordCount = false
   showComments = false
   seriesOpened = true
-  showRelatedContent = true
+  showRelatedContent = false
   relatedContentLimit = 10
 
 # List settings

@@ -1,50 +1,50 @@
 {{ if .Params.series }}
   {{ $seriesName := strings.ToLower (index .Params.series 0) }}
-  {{ $posts := sort (index .Site.Taxonomies.series $seriesName) "Date" "desc" }}
-  {{ $latestPost := index (where $posts ".Permalink" "ne" $.Page.Permalink) 0 }}
-  {{ $olderPosts := after 1 (where $posts ".Permalink" "ne" $.Page.Permalink) }}
+  {{ $allPosts := sort (index .Site.Taxonomies.series $seriesName) "Date" "desc" }}
+  {{ $blogPosts := where $allPosts "Section" "blog" }}
   
-  {{/* Latest Update - Full Content */}}
-  {{ if $latestPost }}
-    <div class="mt-12 mb-8">
-      <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-100 border-b-2 border-primary-400 dark:border-primary-600 pb-2">
-        Latest Update
-      </h2>
-      <div class="mb-4">
-        <h3 class="text-xl font-semibold mb-2">
-          <a href="{{ $latestPost.RelPermalink }}" class="hover:underline">
-            {{ $latestPost.Title }}
-          </a>
-        </h3>
-        <div class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-          {{ $latestPost.Date.Format "January 2, 2006" }}
-        </div>
-        <div class="prose dark:prose-invert max-w-none">
-          {{ $latestPost.Content }}
-        </div>
-      </div>
-    </div>
-  {{ end }}
-  
-  {{/* Past Updates - List */}}
-  {{ if $olderPosts }}
-    <div class="mt-12 mb-8">
-      <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-100 border-b-2 border-primary-400 dark:border-primary-600 pb-2">
-        Past Updates
-      </h2>
-      <div class="space-y-3">
-        {{ range $olderPosts }}
-          <div class="border-l-2 border-primary-400 dark:border-primary-600 pl-4 py-2">
-            <a href="{{ .RelPermalink }}" class="text-lg hover:underline">
-              {{ .Title }}
-            </a>
-            <div class="text-sm text-neutral-600 dark:text-neutral-400">
-              {{ .Date.Format "January 2, 2006" }}
-            </div>
+  {{/* Only show updates if this is a project page, not a blog post */}}
+  {{ if eq .Section "projects" }}
+    {{ $latestPost := index $blogPosts 0 }}
+    {{ $olderPosts := after 1 $blogPosts }}
+    
+    {{/* Latest Update - Full Content */}}
+    {{ if $latestPost }}
+      <div class="mt-12 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-100 border-b-2 border-primary-400 dark:border-primary-600 pb-2">
+          Latest Update
+        </h2>
+        <div class="mb-4">
+          <div class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+            {{ $latestPost.Date.Format "January 2, 2006" }}
           </div>
-        {{ end }}
+          <div class="prose dark:prose-invert max-w-none">
+            {{ $latestPost.Content }}
+          </div>
+        </div>
       </div>
-    </div>
+    {{ end }}
+    
+    {{/* Past Updates - List */}}
+    {{ if $olderPosts }}
+      <div class="mt-12 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-100 border-b-2 border-primary-400 dark:border-primary-600 pb-2">
+          Past Updates
+        </h2>
+        <div class="space-y-3">
+          {{ range $olderPosts }}
+            <div class="border-l-2 border-primary-400 dark:border-primary-600 pl-4 py-2">
+              <a href="{{ .RelPermalink }}" class="text-lg hover:underline">
+                {{ .Title }}
+              </a>
+              <div class="text-sm text-neutral-600 dark:text-neutral-400">
+                {{ .Date.Format "January 2, 2006" }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
   {{ end }}
 {{ end }}
 
