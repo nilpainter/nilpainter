@@ -1,23 +1,50 @@
 {{ if .Params.series }}
-  <div class="mt-8 mb-5 rounded-lg ms-0 ps-0">
-    <h2 class="text-2xl font-bold mb-4 text-neutral-800 dark:text-neutral-100">
-      Updates
-    </h2>
-    {{ $seriesName := strings.ToLower (index .Params.series 0) }}
-    <div class="space-y-3">
-      {{ range $post := sort (index .Site.Taxonomies.series $seriesName) "Date" "desc" }}
-        {{ if ne $post.Permalink $.Page.Permalink }}
+  {{ $seriesName := strings.ToLower (index .Params.series 0) }}
+  {{ $posts := sort (index .Site.Taxonomies.series $seriesName) "Date" "desc" }}
+  {{ $latestPost := index (where $posts ".Permalink" "ne" $.Page.Permalink) 0 }}
+  {{ $olderPosts := after 1 (where $posts ".Permalink" "ne" $.Page.Permalink) }}
+  
+  {{/* Latest Update - Full Content */}}
+  {{ if $latestPost }}
+    <div class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-100 border-b-2 border-primary-400 dark:border-primary-600 pb-2">
+        Latest Update
+      </h2>
+      <div class="mb-4">
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="{{ $latestPost.RelPermalink }}" class="hover:underline">
+            {{ $latestPost.Title }}
+          </a>
+        </h3>
+        <div class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+          {{ $latestPost.Date.Format "January 2, 2006" }}
+        </div>
+        <div class="prose dark:prose-invert max-w-none">
+          {{ $latestPost.Content }}
+        </div>
+      </div>
+    </div>
+  {{ end }}
+  
+  {{/* Past Updates - List */}}
+  {{ if $olderPosts }}
+    <div class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-100 border-b-2 border-primary-400 dark:border-primary-600 pb-2">
+        Past Updates
+      </h2>
+      <div class="space-y-3">
+        {{ range $olderPosts }}
           <div class="border-l-2 border-primary-400 dark:border-primary-600 pl-4 py-2">
-            <a href="{{ $post.RelPermalink }}" class="text-lg hover:underline">
-              {{ $post.Title }}
+            <a href="{{ .RelPermalink }}" class="text-lg hover:underline">
+              {{ .Title }}
             </a>
             <div class="text-sm text-neutral-600 dark:text-neutral-400">
-              {{ $post.Date.Format "January 2, 2006" }}
+              {{ .Date.Format "January 2, 2006" }}
             </div>
           </div>
         {{ end }}
-      {{ end }}
+      </div>
     </div>
-  </div>
+  {{ end }}
 {{ end }}
 
