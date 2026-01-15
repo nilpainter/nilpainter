@@ -21,10 +21,10 @@ mainSections = ["blog", "projects"]
   layout = "background"
   homepageImage = "img/studio.jpg"
   showRecent = true
-  showRecentItems = 6
+  showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "/blog"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
 
 # Article settings
@@ -48,14 +48,14 @@ mainSections = ["blog", "projects"]
 
 # List settings
 [list]
-  showHero = true
-  heroStyle = "background"
+  showHero = false
+  heroStyle = "basic"
   showBreadcrumbs = false
   showSummary = true
   showTableOfContents = false
-  showCards = true
+  showCards = false
   groupByYear = true
-  cardView = true
+  cardView = false
 
 # Taxonomy
 [taxonomy]
