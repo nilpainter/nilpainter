@@ -1,7 +1,14 @@
 baseURL = 'https://nilpainter.github.io/'
 languageCode = 'en-us'
 title = 'Nil Painter'
-theme = 'ananke'
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+theme = 'blowfish'
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.87.0"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"

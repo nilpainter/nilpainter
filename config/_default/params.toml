@@ -1,0 +1,83 @@
+# Blowfish Theme Configuration
+
+# Color Scheme - using custom Gruvbox-inspired dark theme
+colorScheme = "custom"
+
+# Default Appearance
+defaultAppearance = "dark"
+autoSwitchAppearance = false
+
+# Site info
+logo = ""
+description = "A painter's journal - shelter from the storm"
+mainSections = ["blog", "projects"]
+
+# Header
+[header]
+  layout = "background"
+
+# Homepage
+[homepage]
+  layout = "background"
+  homepageImage = "img/studio.jpg"
+  showRecent = true
+  showRecentItems = 6
+  showMoreLink = true
+  showMoreLinkDest = "/blog"
+  cardView = true
+  cardViewScreenWidth = false
+
+# Article settings
+[article]
+  showDate = true
+  showViews = false
+  showLikes = false
+  showDateUpdated = false
+  showAuthor = true
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundHeaderSpace = true
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = false
+  showSummary = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = false
+  showComments = false
+
+# List settings
+[list]
+  showHero = true
+  heroStyle = "background"
+  showBreadcrumbs = false
+  showSummary = true
+  showTableOfContents = false
+  showCards = true
+  groupByYear = true
+  cardView = true
+
+# Taxonomy
+[taxonomy]
+  showTermCount = true
+  showHero = true
+  heroStyle = "background"
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  cardView = true
+
+# Footer
+[footer]
+  showMenu = false
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = false
+  showScrollToTop = true
+
+# Verification (optional, can be removed)
+# [verification]
+#   google = ""
+#   bing = ""
+
