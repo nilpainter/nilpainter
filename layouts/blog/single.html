@@ -45,8 +45,24 @@
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
-        {{/* BLOG POST CONTENT - NO SERIES STUFF */}}
+        {{/* BLOG POST CONTENT */}}
         <div class="article-content max-w-prose mb-20">
+          {{/* If this post is part of a project, show link to parent project */}}
+          {{ if .Params.series }}
+            {{ $seriesName := strings.ToLower (index .Params.series 0) }}
+            {{ $allPosts := sort (index .Site.Taxonomies.series $seriesName) "Date" "desc" }}
+            {{ $projectPage := index (where $allPosts "Section" "projects") 0 }}
+            {{ if $projectPage }}
+              <div class="mb-8 p-4 border-l-4 border-primary-500 dark:border-primary-600 bg-primary-50 dark:bg-neutral-800">
+                <div class="text-sm text-neutral-700 dark:text-neutral-300">
+                  This post is part of 
+                  <a href="{{ $projectPage.RelPermalink }}" class="font-semibold hover:underline text-primary-700 dark:text-primary-400">
+                    {{ index .Params.series 0 }}
+                  </a>
+                </div>
+              </div>
+            {{ end }}
+          {{ end }}
           {{ .Content }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
