@@ -111,8 +111,24 @@ article {
 }
 
 .article-content {
-  padding: 1.5rem 0;
+  padding: 2rem 1.5rem;
   line-height: 1.8;
+  margin: 0 auto;
+}
+
+/* Extra padding for single post/project pages */
+#single_header {
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Content wrapper spacing */
+.min-w-0.min-h-0.max-w-fit {
+  padding: 0 1rem;
+}
+
+.max-w-prose {
+  padding: 0 1.5rem;
 }
 
 .prose {
@@ -142,7 +158,17 @@ article {
 
 /* Section spacing */
 section {
-  padding: 2rem 0;
+  padding: 2rem 1.5rem;
+}
+
+/* Update sections on project pages */
+.mt-12 {
+  margin-top: 3rem !important;
+  padding: 0 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2.5rem !important;
 }
 
 /* List items breathing room */

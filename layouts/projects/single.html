@@ -29,22 +29,9 @@
       {{ end }}
     </header>
 
-    {{/* Body */}}
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-      {{ $enableToc := site.Params.article.showTableOfContents | default false }}
-      {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
-      {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
-      {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
-      {{ if $showToc }}
-        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
-          <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
-            {{ partial "toc.html" . }}
-          </div>
-        </div>
-      {{ end }}
-
-
-      <div class="min-w-0 min-h-0 max-w-fit">
+    {{/* Body - No Sidebar */}}
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert mx-auto">
+      <div class="w-full max-w-prose mx-auto">
         {{/* PROJECT CONTENT FIRST */}}
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}
