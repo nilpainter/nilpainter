@@ -49,7 +49,7 @@
       </div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
       <script>
-        // Inject custom CSS into Cusdis iframe
+        // Inject custom CSS into Cusdis iframe and auto-resize
         const observer = new MutationObserver((mutations) => {
           mutations.forEach((mutation) => {
             if (mutation.addedNodes.length == 0) return;
@@ -60,6 +60,7 @@
               body {
                 font-family: Georgia, serif !important;
                 background-color: #faf8f5 !important;
+                overflow: hidden !important;
               }
               
               * {
@@ -137,6 +138,46 @@
             `;
             
             iframe.srcdoc = iframe.srcdoc.replace('</style>', customStyles + '</style>');
+            
+            // Auto-resize iframe to fit content
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.overflow = 'hidden';
+            
+            const resizeIframe = () => {
+              try {
+                const body = iframe.contentWindow.document.body;
+                const html = iframe.contentWindow.document.documentElement;
+                const height = Math.max(
+                  body.scrollHeight,
+                  body.offsetHeight,
+                  html.clientHeight,
+                  html.scrollHeight,
+                  html.offsetHeight
+                );
+                iframe.style.height = height + 'px';
+              } catch (e) {
+                // Fallback if we can't access iframe content
+                iframe.style.height = '600px';
+              }
+            };
+            
+            // Resize on load
+            iframe.addEventListener('load', () => {
+              resizeIframe();
+              // Watch for changes inside iframe (new comments, form interactions)
+              const iframeObserver = new MutationObserver(resizeIframe);
+              try {
+                iframeObserver.observe(iframe.contentWindow.document.body, {
+                  childList: true,
+                  subtree: true,
+                  attributes: true
+                });
+              } catch (e) {
+                // Fallback: resize periodically
+                setInterval(resizeIframe, 500);
+              }
+            });
           });
         });
         observer.observe(document.getElementById("cusdis_thread"), { childList: true, subtree: true });
