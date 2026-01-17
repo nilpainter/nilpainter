@@ -35,6 +35,21 @@
     {{ .Content }}
   </div>
 
+  {{/* Comments Section */}}
+  {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
+    <div style="margin-top: 4rem; max-width: 800px; background-color: #faf8f5 !important;">
+      <div id="cusdis_thread"
+        data-host="{{ site.Params.comments.cusdis.host }}"
+        data-app-id="{{ site.Params.comments.cusdis.appId }}"
+        data-page-id="{{ .RelPermalink }}"
+        data-page-url="{{ .Permalink }}"
+        data-page-title="{{ .Title }}"
+        style="background-color: #faf8f5 !important;">
+      </div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  {{ end }}
+
 </article>
 </div>
 
