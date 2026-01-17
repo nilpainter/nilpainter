@@ -84,7 +84,7 @@ mainSections = ["blog", "projects"]
 [footer]
   showMenu = false
   showCopyright = true
-  showThemeAttribution = true
+  showThemeAttribution = false
   showAppearanceSwitcher = false
   showScrollToTop = true
 
