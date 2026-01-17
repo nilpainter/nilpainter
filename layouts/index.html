@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="max-w-3xl mx-auto px-6 py-12">
+  
+  {{/* Optional hero/header image */}}
+  {{ if .Site.Params.homepage.homepageImage }}
+  <div class="mb-16 -mx-6">
+    <img src="{{ .Site.Params.homepage.homepageImage | relURL }}" alt="{{ .Site.Title }}" class="w-full h-64 object-cover opacity-20 rounded-none">
+  </div>
+  {{ end }}
+
+  {{/* Subtle "Recent" label */}}
+  <div class="mb-12">
+    <p class="text-xs uppercase tracking-widest opacity-40 font-light">Recent Entries</p>
+  </div>
+
+  {{/* Journal entries */}}
+  <div class="space-y-16">
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    {{ $limit := .Site.Params.homepage.showRecentItems | default 10 }}
+    {{ range first $limit $pages }}
+      <article class="journal-entry">
+        {{/* Date */}}
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="block text-sm opacity-50 mb-3 font-light tracking-wide">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
+        
+        {{/* Title */}}
+        <h2 class="text-3xl font-light mb-4 leading-tight">
+          <a href="{{ .RelPermalink }}" class="text-neutral-100 hover:text-primary-400 transition-colors no-underline">
+            {{ .Title }}
+          </a>
+        </h2>
+        
+        {{/* Summary */}}
+        {{ if .Summary }}
+        <div class="text-lg leading-relaxed opacity-80">
+          {{ .Summary }}
+        </div>
+        {{ end }}
+        
+        {{/* Read more link - subtle */}}
+        <a href="{{ .RelPermalink }}" class="inline-block mt-4 text-sm text-primary-400 hover:text-primary-300 font-light tracking-wide">
+          Continue reading →
+        </a>
+      </article>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
+

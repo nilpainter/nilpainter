@@ -57,29 +57,43 @@
   --color-code-fg: #ebdbb2;        /* off-white text */
 }
 
-/* Override default styles for warmer feel */
+/* FORCE Gruvbox background and text colors */
 body {
-  background-color: var(--color-neutral-100);
-  color: var(--color-neutral-fg);
+  background-color: #282828 !important;
+  color: #ebdbb2 !important;
+}
+
+html {
+  background-color: #282828 !important;
 }
 
 /* Ensure links have warm orange color */
 a {
-  color: var(--color-link);
+  color: #fe8019 !important;
 }
 
 a:hover {
-  color: var(--color-link-hover);
+  color: #fabd2f !important;
 }
 
-/* Header styling for darker, cozier feel */
+/* Header styling */
 header {
-  background-color: var(--color-neutral-50);
+  background-color: #1d2021;
+  color: #ebdbb2 !important;
 }
 
-/* Card backgrounds slightly lighter than page */
+/* Navigation links */
+nav a {
+  color: #fe8019 !important;
+}
+
+nav a:hover {
+  color: #fabd2f !important;
+}
+
+/* Card backgrounds */
 article, .card {
-  background-color: var(--color-neutral-200);
+  background-color: #282828;
 }
 
 /* Code blocks with darker background */
@@ -197,34 +211,54 @@ h2.border-b-2::after {
 
 /* Better prose spacing */
 .prose {
-  max-width: 70ch;
+  max-width: 65ch;
   line-height: 1.75;
+  margin: 0 auto;
 }
 
 .prose p {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  font-size: 1.0625rem;
+  color: #d5c4a1;
 }
 
 .prose h2 {
   margin-top: 3rem;
   margin-bottom: 1.25rem;
+  font-size: 1.875rem;
 }
 
 .prose h3 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .prose ul, .prose ol {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   padding-left: 2rem;
+  color: #d5c4a1;
 }
 
 .prose li {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+/* Homepage specific - clean and minimal */
+.max-w-7xl {
+  max-width: 50rem !important;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Main content area */
+main {
+  background-color: #282828;
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 /* Softer date styling */

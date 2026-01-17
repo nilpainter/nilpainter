@@ -18,7 +18,7 @@ mainSections = ["blog", "projects"]
 
 # Homepage
 [homepage]
-  layout = "background"
+  layout = "page"
   homepageImage = "img/header.jpg"  # Add your header image to static/img/
   showRecent = true
   showRecentItems = 20
