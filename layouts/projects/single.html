@@ -65,7 +65,8 @@
 
   {{/* Comments Section */}}
   {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
-    <div style="margin-top: 4rem; max-width: 800px; background-color: #faf8f5 !important;">
+    <div style="margin-top: 4rem; max-width: 800px; background-color: #faf8f5 !important; border-top: 1px solid rgba(232, 228, 223, 0.5); padding-top: 3rem;">
+      <h2 style="font-family: Georgia, serif; font-size: 1.75rem; font-weight: 300; color: #2d2d2d; margin-bottom: 2rem; font-style: italic;">Comments</h2>
       <div id="cusdis_thread"
         data-host="{{ site.Params.comments.cusdis.host }}"
         data-app-id="{{ site.Params.comments.cusdis.appId }}"
@@ -75,6 +76,88 @@
         style="background-color: #faf8f5 !important;">
       </div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+      <style>
+        /* Style Cusdis to match site aesthetic */
+        #cusdis_thread {
+          font-family: Georgia, serif !important;
+        }
+        
+        #cusdis_thread * {
+          font-family: Georgia, serif !important;
+        }
+        
+        #cusdis_thread input,
+        #cusdis_thread textarea {
+          font-family: Georgia, serif !important;
+          background-color: #ffffff !important;
+          border: 1px solid #e8e4df !important;
+          border-radius: 4px !important;
+          padding: 0.75rem 1rem !important;
+          font-size: 0.95rem !important;
+          color: #2d2d2d !important;
+          line-height: 1.6 !important;
+        }
+        
+        #cusdis_thread input:focus,
+        #cusdis_thread textarea:focus {
+          outline: none !important;
+          border-color: #c7653b !important;
+        }
+        
+        #cusdis_thread textarea {
+          min-height: 120px !important;
+        }
+        
+        #cusdis_thread button {
+          background-color: #c7653b !important;
+          color: #ffffff !important;
+          border: none !important;
+          border-radius: 4px !important;
+          padding: 0.75rem 2rem !important;
+          font-size: 0.95rem !important;
+          font-family: Georgia, serif !important;
+          cursor: pointer !important;
+          transition: background-color 0.2s ease !important;
+        }
+        
+        #cusdis_thread button:hover {
+          background-color: #a8503f !important;
+        }
+        
+        #cusdis_thread label {
+          font-size: 0.875rem !important;
+          color: #5a5a5a !important;
+          font-weight: 400 !important;
+          margin-bottom: 0.5rem !important;
+          display: block !important;
+        }
+        
+        /* Style existing comments */
+        #cusdis_thread .cusdis-comment {
+          background-color: rgba(255, 255, 255, 0.5) !important;
+          border: 1px solid #e8e4df !important;
+          border-radius: 6px !important;
+          padding: 1.5rem !important;
+          margin-bottom: 1rem !important;
+        }
+        
+        #cusdis_thread .cusdis-comment-nickname {
+          font-weight: 500 !important;
+          color: #2d2d2d !important;
+          font-size: 1rem !important;
+        }
+        
+        #cusdis_thread .cusdis-comment-content {
+          color: #5a5a5a !important;
+          line-height: 1.7 !important;
+          margin-top: 0.75rem !important;
+        }
+        
+        #cusdis_thread .cusdis-comment-date {
+          font-size: 0.875rem !important;
+          color: #999999 !important;
+        }
+      </style>
     </div>
   {{ end }}
 
