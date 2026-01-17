@@ -32,6 +32,20 @@ header {
   padding: 1.5rem 0;
 }
 
+/* Site title - should be dark, not orange */
+header h1 a,
+header .site-title a,
+header a[rel="home"] {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+header h1 a:hover,
+header .site-title a:hover,
+header a[rel="home"]:hover {
+  color: var(--text-primary) !important;
+}
+
 /* Typography - clean and readable */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary) !important;
