@@ -171,6 +171,7 @@
             iframe.style.border = 'none';
             iframe.style.width = '100%';
             iframe.style.overflow = 'hidden';
+            iframe.style.minHeight = '400px'; // Ensure minimum height so it never disappears
             
             const resizeIframe = () => {
               try {
@@ -181,21 +182,31 @@
                   body.offsetHeight,
                   html.clientHeight,
                   html.scrollHeight,
-                  html.offsetHeight
+                  html.offsetHeight,
+                  400 // Minimum 400px
                 );
                 iframe.style.height = height + 'px';
               } catch (e) {
-                // Fallback if we can't access iframe content
-                iframe.style.height = '600px';
+                // Fallback - keep visible
+                if (!iframe.style.height || iframe.style.height === '0px') {
+                  iframe.style.height = '500px';
+                }
               }
             };
             
+            // Initial resize
+            resizeIframe();
+            
             // Resize on load
             iframe.addEventListener('load', () => {
-              resizeIframe();
-              // Watch for changes inside iframe (new comments, form interactions)
-              const iframeObserver = new MutationObserver(resizeIframe);
+              setTimeout(resizeIframe, 100); // Small delay to ensure content is rendered
+              setTimeout(resizeIframe, 500); // Check again after half second
+              
+              // Watch for changes inside iframe
               try {
+                const iframeObserver = new MutationObserver(() => {
+                  resizeIframe();
+                });
                 iframeObserver.observe(iframe.contentWindow.document.body, {
                   childList: true,
                   subtree: true,
@@ -203,9 +214,12 @@
                 });
               } catch (e) {
                 // Fallback: resize periodically
-                setInterval(resizeIframe, 500);
+                setInterval(resizeIframe, 1000);
               }
             });
+            
+            // Also resize periodically as a safety net
+            setInterval(resizeIframe, 2000);
           });
         });
         observer.observe(document.getElementById("cusdis_thread"), { childList: true, subtree: true });
