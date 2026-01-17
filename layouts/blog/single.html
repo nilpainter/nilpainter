@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-<article style="max-width: 800px; margin: 0 auto; padding: 4rem 3rem; background: transparent !important;">
+<div style="background-color: #faf8f5 !important; min-height: 100vh;">
+<article style="max-width: 800px; margin: 0 auto; padding: 4rem 3rem; background-color: #faf8f5 !important; background: #faf8f5 !important;">
   
   {{/* Project link if part of a series */}}
   {{ if .Params.series }}
@@ -19,22 +20,23 @@
   {{ end }}
 
   {{/* Post Header */}}
-  <header style="margin-bottom: 3rem; border: none !important;">
+  <header style="margin-bottom: 3rem; border: none !important; background-color: #faf8f5 !important;">
     <time datetime="{{ .Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 1rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;">
       {{ .Date.Format "January 2, 2006" }}
     </time>
     
-    <h1 style="font-family: Georgia, serif; font-size: 2.5rem; font-weight: 300; color: #2d2d2d; margin-bottom: 0; line-height: 1.2; border: none !important;">
+    <h1 style="font-family: Georgia, serif; font-size: 2.5rem; font-weight: 300; color: #2d2d2d; margin-bottom: 0; line-height: 1.2; border: none !important; background-color: #faf8f5 !important;">
       {{ .Title }}
     </h1>
   </header>
 
   {{/* Post Content */}}
-  <div style="font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background: transparent !important;">
+  <div style="font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background-color: #faf8f5 !important; background: #faf8f5 !important;">
     {{ .Content }}
   </div>
 
 </article>
+</div>
 
 <style>
   /* Kill white backgrounds */
