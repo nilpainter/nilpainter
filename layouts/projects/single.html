@@ -47,18 +47,16 @@
         <h2 style="font-family: Georgia, serif; font-size: 2rem; font-weight: 300; color: #2d2d2d; margin-bottom: 2rem; font-style: italic; border: none !important; background-color: #faf8f5 !important;">
           Past Updates
         </h2>
-        <div style="max-width: 42rem; display: flex; flex-direction: column; gap: 2rem; background-color: #faf8f5 !important;">
+        <div style="max-width: 42rem; background-color: #faf8f5 !important;">
           {{ range $olderPosts }}
-            <article style="background-color: #faf8f5 !important; background: #faf8f5 !important; padding-bottom: 2rem; border-bottom: 1px solid rgba(232, 228, 223, 0.5);">
-              <time datetime="{{ .Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
+            <div style="background-color: #faf8f5 !important; margin-bottom: 1.5rem;">
+              <time datetime="{{ .Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
                 {{ .Date.Format "January 2, 2006" }}
               </time>
-              <h3 style="margin-bottom: 0; background-color: #faf8f5 !important;">
-                <a href="{{ .RelPermalink }}" style="font-family: Georgia, serif; font-size: 1.35rem; font-weight: 400; color: #2d2d2d; text-decoration: none;">
-                  {{ .Title }}
-                </a>
-              </h3>
-            </article>
+              <a href="{{ .RelPermalink }}" style="font-family: Georgia, serif; font-size: 1.25rem; font-weight: 400; color: #2d2d2d; text-decoration: none; display: block;">
+                {{ .Title }}
+              </a>
+            </div>
           {{ end }}
         </div>
       </div>
