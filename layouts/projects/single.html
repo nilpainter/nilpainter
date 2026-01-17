@@ -4,14 +4,14 @@
 <article style="max-width: 1000px; margin: 0 auto; padding: 4rem 3rem; background-color: #faf8f5 !important; background: #faf8f5 !important;">
   
   {{/* Project Header */}}
-  <header style="margin-bottom: 4rem; border: none !important;">
-    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic; border: none !important;">
+  <header style="margin-bottom: 4rem; border: none !important; background-color: #faf8f5 !important; background: #faf8f5 !important; text-align: left;">
+    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic; border: none !important; background-color: #faf8f5 !important; background: #faf8f5 !important; text-align: left;">
       {{ .Title }}
     </h1>
   </header>
 
   {{/* Project Content (Concept, Challenge, Materials) */}}
-  <div style="max-width: 42rem; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background: transparent !important; margin-bottom: 4rem;">
+  <div style="max-width: 42rem; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background-color: #faf8f5 !important; background: #faf8f5 !important; margin-bottom: 4rem;">
     {{ .Content }}
   </div>
 
@@ -26,15 +26,15 @@
     
     {{/* Latest Update */}}
     {{ if $latestPost }}
-      <div style="margin-top: 4rem; margin-bottom: 4rem;">
-        <h2 style="font-family: Georgia, serif; font-size: 2rem; font-weight: 300; color: #2d2d2d; margin-bottom: 2rem; font-style: italic; border: none !important;">
+      <div style="margin-top: 4rem; margin-bottom: 4rem; background-color: #faf8f5 !important;">
+        <h2 style="font-family: Georgia, serif; font-size: 2rem; font-weight: 300; color: #2d2d2d; margin-bottom: 2rem; font-style: italic; border: none !important; background-color: #faf8f5 !important;">
           Latest Update
         </h2>
-        <div style="max-width: 42rem;">
-          <time datetime="{{ $latestPost.Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+        <div style="max-width: 42rem; background-color: #faf8f5 !important;">
+          <time datetime="{{ $latestPost.Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; background-color: #faf8f5 !important;">
             {{ $latestPost.Date.Format "January 2, 2006" }}
           </time>
-          <div style="font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a;">
+          <div style="font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background-color: #faf8f5 !important;">
             {{ $latestPost.Content }}
           </div>
         </div>
@@ -43,17 +43,17 @@
     
     {{/* Past Updates */}}
     {{ if $olderPosts }}
-      <div style="margin-top: 4rem;">
-        <h2 style="font-family: Georgia, serif; font-size: 2rem; font-weight: 300; color: #2d2d2d; margin-bottom: 2rem; font-style: italic; border: none !important;">
+      <div style="margin-top: 4rem; background-color: #faf8f5 !important;">
+        <h2 style="font-family: Georgia, serif; font-size: 2rem; font-weight: 300; color: #2d2d2d; margin-bottom: 2rem; font-style: italic; border: none !important; background-color: #faf8f5 !important;">
           Past Updates
         </h2>
-        <div style="max-width: 42rem; display: flex; flex-direction: column; gap: 2rem;">
+        <div style="max-width: 42rem; display: flex; flex-direction: column; gap: 2rem; background-color: #faf8f5 !important;">
           {{ range $olderPosts }}
-            <article style="background: transparent; padding-bottom: 2rem; border-bottom: 1px solid rgba(232, 228, 223, 0.5);">
+            <article style="background-color: #faf8f5 !important; background: #faf8f5 !important; padding-bottom: 2rem; border-bottom: 1px solid rgba(232, 228, 223, 0.5);">
               <time datetime="{{ .Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
                 {{ .Date.Format "January 2, 2006" }}
               </time>
-              <h3 style="margin-bottom: 0;">
+              <h3 style="margin-bottom: 0; background-color: #faf8f5 !important;">
                 <a href="{{ .RelPermalink }}" style="font-family: Georgia, serif; font-size: 1.35rem; font-weight: 400; color: #2d2d2d; text-decoration: none;">
                   {{ .Title }}
                 </a>
