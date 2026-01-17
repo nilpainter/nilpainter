@@ -91,6 +91,27 @@ nav a:hover {
 main {
   background-color: transparent !important;
   padding: 0;
+  max-width: 100% !important;
+}
+
+/* Override theme's max-width constraints */
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-prose,
+.container,
+main > div,
+main > article,
+main > section {
+  max-width: 100% !important;
+}
+
+/* Allow full width for homepage */
+body > main,
+#main-content {
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 /* Hero section styling */
