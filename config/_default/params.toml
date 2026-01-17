@@ -55,8 +55,8 @@ mainSections = ["blog", "projects"]
   provider = "cusdis"
 
 [comments.cusdis]
-  host = "https://cusdis.com"  # or your self-hosted URL
-  appId = "YOUR_CUSDIS_APP_ID"  # Get this from cusdis.com dashboard
+  host = "https://cusdis.com"
+  appId = "6fa27527-8e15-4844-851c-d45690fba458"
 
 # List settings
 [list]
