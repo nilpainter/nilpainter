@@ -3,8 +3,8 @@
 <article style="max-width: 1000px; margin: 0 auto; padding: 4rem 3rem; background-color: transparent !important; background: none !important;">
   
   {{/* Page Header */}}
-  <header style="text-align: left; margin-bottom: 4rem; background: transparent !important;">
-    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic;">
+  <header style="text-align: left; margin-bottom: 4rem; background: transparent !important; border: none !important; border-bottom: none !important;">
+    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic; border: none !important;">
       {{ .Title }}
     </h1>
     {{ if .Params.description }}
@@ -32,6 +32,15 @@
   .prose {
     background-color: transparent !important;
     background: none !important;
+  }
+  
+  /* KILL ALL BORDERS AND SEPARATORS */
+  article header,
+  article h1,
+  article header h1 {
+    border: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
   }
   
   /* Style the content from markdown */
