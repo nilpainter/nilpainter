@@ -12,6 +12,9 @@ logo = ""
 description = "A painter's journal - shelter from the storm"
 mainSections = ["blog", "projects"]
 
+# Disable search
+enableSearch = false
+
 # Header
 [header]
   layout = "background"
