@@ -243,6 +243,7 @@ input[type="search"]::placeholder {
 /* Footer */
 footer {
   padding: 2.5rem 3rem !important;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
