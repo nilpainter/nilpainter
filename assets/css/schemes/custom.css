@@ -151,30 +151,48 @@ nav a:hover {
    COMPONENTS
    =================================== */
 
-/* Search box */
+/* Search box - NUCLEAR override */
 #search-query,
 input[type="search"],
 .search-input,
 input[id*="search"],
-input[name*="search"] {
-  background: #282828 !important;
-  border: 2px solid #fe8019 !important;
-  color: #ebdbb2 !important;
+input[name*="search"],
+body #search-query,
+body input[type="search"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 2px solid #ff8c42 !important;
+  border-color: #ff8c42 !important;
+  color: #ffffff !important;
   padding: 0.75rem 1rem !important;
+  box-shadow: none !important;
 }
 
 #search-query:focus,
-input[type="search"]:focus {
-  background: #282828 !important;
-  border-color: #fe8019 !important;
+input[type="search"]:focus,
+body #search-query:focus,
+body input[type="search"]:focus {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-color: #ff8c42 !important;
   outline: none !important;
+  box-shadow: none !important;
 }
 
-/* Search modal/container */
+/* Search modal/container - kill all backgrounds */
 #search-modal,
 .search-modal,
-[id*="search"] {
-  background: #282828 !important;
+[id*="search"],
+body [id*="search-modal"],
+.search-wrapper,
+.search-container {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+/* Kill any blue theme colors */
+input[type="search"]::placeholder {
+  color: #999999 !important;
 }
 
 /* Project/Series banner */
