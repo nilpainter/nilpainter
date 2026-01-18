@@ -9,9 +9,12 @@
   {{- partialCached "init.html" . -}}
 
   {{/* CHANGED: Removed max-w-7xl and most padding to allow full width */}}
+  {{/* Add .home class to body on homepage for dark theme */}}
   {{ $bodyLayout := "flex flex-col h-screen leading-7 px-0" }}
   {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
-  <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
+  {{ $pageType := "" }}
+  {{ if .IsHome }}{{ $pageType = "home" }}{{ end }}
+  <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ $pageType }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
     <div id="the-top" class="absolute flex self-center">
       <a
         class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
