@@ -18,41 +18,53 @@
   --dark-border: rgba(255, 255, 255, 0.1); /* Light border for dark cards */
 }
 
-/* DARK THEME: Homepage, Blog list, Projects list, About page */
+/* EVERYTHING IS DARK NOW - No warm theme */
+body,
 body.home,
 body.list,
 body.page,
-body.home html,
-body.list html,
-body.page html,
-body.home main,
-body.list main,
-body.page main,
-body.home #main-content,
-body.list #main-content,
-body.page #main-content {
+body.single,
+body html,
+body main,
+body #main-content {
   background-color: #000000 !important;
   background: #000000 !important;
+  color: #ffffff !important;
 }
 
-body.home header,
-body.list header,
-body.page header {
+body header,
+header {
   background-color: #000000 !important;
   border-bottom-color: rgba(100, 100, 100, 0.3) !important;
 }
 
-/* WILDCARD - FORCE EVERYTHING WHITE */
-body.home *,
-body.list *,
-body.page * {
+/* FORCE ALL TEXT WHITE */
+body *,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body a,
+body span,
+body div,
+body time,
+body li {
   color: #ffffff !important;
 }
 
-body.home time,
-body.list time,
-body.page time {
+body time {
   color: #cccccc !important;
+}
+
+body a:hover {
+  color: #ff8c42 !important; /* Warm orange accent on hover */
+}
+
+.section-label {
+  color: #ff8c42 !important;
 }
 
 /* ALL TEXT WHITE ON DARK PAGES - NUCLEAR OPTION */
@@ -125,23 +137,7 @@ body.page article a:hover {
   color: #d4956f !important;
 }
 
-/* FORCE WARM BACKGROUND ON SINGLE POST/PROJECT PAGES ONLY */
-body.single html,
-body.single,
-body.single #main-content,
-body.single main,
-body.single article,
-body.single section,
-body.single div,
-body.single .prose,
-body.single .article-content,
-body.single .max-w-prose,
-body.single header,
-body.single .bg-neutral,
-body.single .dark\:bg-neutral-800 {
-  background-color: #fff8f0 !important; /* Warmer cream */
-  background: #fff8f0 !important;
-}
+/* Removed - everything is dark now */
 
 /* Only white backgrounds on cards (homepage) */
 .image-card,
@@ -241,41 +237,7 @@ body.page nav a:hover {
   color: #d4956f !important;
 }
 
-/* Nav links dark on single pages - SAME STYLE */
-body.single header a.text-base,
-body.single .main-menu a.text-base {
-  color: var(--text-dark) !important;
-  font-weight: 300 !important;
-  letter-spacing: 0.25em !important;
-  text-transform: uppercase !important;
-  font-size: 1.3rem !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-}
-
-body.single header a.text-base:hover,
-body.single .main-menu a.text-base:hover {
-  color: #c7653b !important;
-}
-
-body.single nav a {
-  color: var(--text-mid) !important;
-  text-transform: uppercase !important;
-  font-size: 0.7rem !important;
-  letter-spacing: 0.2em !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-weight: 400 !important;
-}
-
-body.single nav a:hover {
-  color: #c7653b !important;
-}
-
-/* Header styling */
-body.single header {
-  background-color: #fffaf4 !important; /* Warm white */
-  border-bottom: 1px solid #f0e4d8; /* Warm border */
-  padding: 1.5rem 3rem !important;
-}
+/* Removed - everything is dark now */
 
 /* Main content */
 main {
