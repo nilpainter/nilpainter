@@ -106,7 +106,7 @@ body.home .main-menu a.text-base {
   font-weight: 300 !important;
   letter-spacing: 0.25em !important;
   text-transform: uppercase !important;
-  font-size: 1rem !important;
+  font-size: 1.3rem !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
@@ -117,6 +117,7 @@ body.home .main-menu a.text-base:hover {
 
 body.home nav a {
   color: #cccccc !important;
+  font-size: 0.7rem !important;
 }
 
 body.home nav a:hover {
