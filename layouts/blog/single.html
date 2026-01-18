@@ -34,77 +34,8 @@
     {{ .Content }}
   </div>
 
-  {{/* Comments Section - Centered, Narrow */}}
-  {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
-    <div style="max-width: 50rem; margin: 4rem auto 0; padding-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-      <h2 style="font-size: 1.75rem; font-weight: 300; margin-bottom: 2rem; font-style: italic;">Comments</h2>
-      <div id="cusdis_thread"
-        data-host="{{ site.Params.comments.cusdis.host }}"
-        data-app-id="{{ site.Params.comments.cusdis.appId }}"
-        data-page-id="{{ .RelPermalink }}"
-        data-page-url="{{ .Permalink }}"
-        data-page-title="{{ .Title }}"
-        data-theme="dark"
-        style="width: 100%; max-width: 100%;">
-      </div>
-      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-      <script>
-        // Fix Cusdis iframe
-        const cusdisObserver = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
-              if (node.tagName === 'IFRAME') {
-                // Fix width and remove scrollbar
-                node.style.width = '100%';
-                node.style.maxWidth = '100%';
-                node.style.border = 'none';
-                node.style.overflow = 'hidden';
-                node.scrolling = 'no';
-                
-                // Dark theme injection
-                node.style.colorScheme = 'dark';
-                try {
-                  const iframeDoc = node.contentDocument || node.contentWindow.document;
-                  const style = iframeDoc.createElement('style');
-                  style.textContent = `
-                    body { 
-                      background: #000 !important; 
-                      color: #fff !important; 
-                      overflow: hidden !important;
-                      margin: 0 !important;
-                      padding: 20px !important;
-                    }
-                    * { color: #fff !important; background: transparent !important; }
-                    input, textarea { 
-                      background: #1a1a1a !important; 
-                      border: 1px solid #333 !important; 
-                      color: #fff !important; 
-                    }
-                    button { 
-                      background: #ff8c42 !important; 
-                      color: #fff !important; 
-                    }
-                  `;
-                  iframeDoc.head.appendChild(style);
-                } catch (e) {}
-                
-                // Auto-resize
-                const resizeIframe = () => {
-                  try {
-                    const height = node.contentWindow.document.body.scrollHeight;
-                    node.style.height = height + 'px';
-                  } catch (e) {}
-                };
-                node.onload = resizeIframe;
-                setInterval(resizeIframe, 500);
-              }
-            });
-          });
-        });
-        cusdisObserver.observe(document.getElementById('cusdis_thread'), { childList: true, subtree: true });
-      </script>
-    </div>
-  {{ end }}
+  {{/* Comments - Shared Partial */}}
+  {{ partial "comments.html" . }}
 
 </div>
 
