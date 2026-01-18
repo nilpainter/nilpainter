@@ -118,7 +118,7 @@ body.page article a:hover {
   color: #d4956f !important;
 }
 
-/* FORCE CREAM BACKGROUND ON SINGLE POST/PROJECT PAGES ONLY */
+/* FORCE WARM BACKGROUND ON SINGLE POST/PROJECT PAGES ONLY */
 body.single html,
 body.single,
 body.single #main-content,
@@ -132,8 +132,8 @@ body.single .max-w-prose,
 body.single header,
 body.single .bg-neutral,
 body.single .dark\:bg-neutral-800 {
-  background-color: #faf8f5 !important;
-  background: #faf8f5 !important;
+  background-color: #fff8f0 !important; /* Warmer cream */
+  background: #fff8f0 !important;
 }
 
 /* Only white backgrounds on cards (homepage) */
@@ -234,29 +234,39 @@ body.page nav a:hover {
   color: #d4956f !important;
 }
 
-/* Nav links dark on single pages */
+/* Nav links dark on single pages - SAME STYLE */
 body.single header a.text-base,
 body.single .main-menu a.text-base {
   color: var(--text-dark) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  font-size: 1.3rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+body.single header a.text-base:hover,
+body.single .main-menu a.text-base:hover {
+  color: #c7653b !important;
 }
 
 body.single nav a {
   color: var(--text-mid) !important;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-weight: 400;
+  text-transform: uppercase !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.2em !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-weight: 400 !important;
 }
 
 body.single nav a:hover {
-  color: var(--text-dark) !important;
+  color: #c7653b !important;
 }
 
 /* Header styling */
 body.single header {
-  background-color: var(--warm-white) !important;
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: #fffaf4 !important; /* Warm white */
+  border-bottom: 1px solid #f0e4d8; /* Warm border */
   padding: 1.5rem 3rem !important;
 }
 
