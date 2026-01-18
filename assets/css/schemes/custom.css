@@ -195,13 +195,9 @@ body:not(.home) header {
   padding: 1.5rem 3rem !important;
 }
 
-/* SITE TITLE - White on dark pages, dark on warm single pages */
-body.home header a.text-base,
-body.list header a.text-base,
-body.page header a.text-base,
-body.home .main-menu a.text-base,
-body.list .main-menu a.text-base,
-body.page .main-menu a.text-base {
+/* SITE TITLE - White on ALL pages */
+header a.text-base,
+.main-menu a.text-base {
   color: #ffffff !important;
   font-weight: 300 !important;
   letter-spacing: 0.25em !important;
@@ -210,19 +206,13 @@ body.page .main-menu a.text-base {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
-body.home header a.text-base:hover,
-body.list header a.text-base:hover,
-body.page header a.text-base:hover,
-body.home .main-menu a.text-base:hover,
-body.list .main-menu a.text-base:hover,
-body.page .main-menu a.text-base:hover {
-  color: #d4956f !important;
+header a.text-base:hover,
+.main-menu a.text-base:hover {
+  color: #ff8c42 !important;
 }
 
-/* Nav links white on dark pages */
-body.home nav a,
-body.list nav a,
-body.page nav a {
+/* Nav links white on ALL pages */
+nav a {
   color: #ffffff !important;
   font-size: 0.7rem !important;
   text-transform: uppercase !important;
@@ -231,10 +221,8 @@ body.page nav a {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
-body.home nav a:hover,
-body.list nav a:hover,
-body.page nav a:hover {
-  color: #d4956f !important;
+nav a:hover {
+  color: #ff8c42 !important;
 }
 
 /* Removed - everything is dark now */
