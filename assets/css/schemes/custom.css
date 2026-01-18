@@ -1,5 +1,6 @@
 /* Elegant Artist Portfolio - Gallery Aesthetic */
 
+/* Dark Theme Colors */
 :root {
   /* WARM STUDIO PALETTE - Hot, orange, cozy */
   --cream: #fff8f0; /* Warmer cream with orange tint */
@@ -10,6 +11,11 @@
   --accent-rust: #d4704f; /* Warmer, more orange rust */
   --accent-warm: #b85a3a; /* Deeper warm orange */
   --border-subtle: #f0e4d8; /* Warm subtle border */
+  
+  /* DARK THEME - Pure Black */
+  --dark-bg: #000000; /* Pure black background */
+  --dark-card-bg: rgba(20, 20, 20, 0.8); /* Very dark cards */
+  --dark-border: rgba(255, 255, 255, 0.1); /* Light border for dark cards */
 }
 
 /* DARK THEME: Homepage, Blog list, Projects list, About page */
