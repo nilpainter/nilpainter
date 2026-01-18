@@ -35,7 +35,7 @@ body.page header {
   border-bottom-color: rgba(100, 100, 100, 0.3) !important;
 }
 
-/* ALL TEXT WHITE ON DARK PAGES */
+/* ALL TEXT WHITE ON DARK PAGES - NUCLEAR OPTION */
 body.home h1,
 body.list h1,
 body.page h1,
@@ -53,7 +53,16 @@ body.list h5,
 body.page h5,
 body.home h6,
 body.list h6,
-body.page h6 {
+body.page h6,
+body.home article h1,
+body.list article h1,
+body.page article h1,
+body.home article h2,
+body.list article h2,
+body.page article h2,
+body.home article h3,
+body.list article h3,
+body.page article h3 {
   color: #ffffff !important;
 }
 
@@ -66,21 +75,33 @@ body.page time,
 body.home span,
 body.list span,
 body.page span,
-body.home div,
-body.list div,
-body.page div {
+body.home article p,
+body.list article p,
+body.page article p,
+body.home article time,
+body.list article time,
+body.page article time,
+body.home article div,
+body.list article div,
+body.page article div {
   color: #cccccc !important;
 }
 
 body.home a,
 body.list a,
-body.page a {
+body.page a,
+body.home article a,
+body.list article a,
+body.page article a {
   color: #ffffff !important;
 }
 
 body.home a:hover,
 body.list a:hover,
-body.page a:hover {
+body.page a:hover,
+body.home article a:hover,
+body.list article a:hover,
+body.page article a:hover {
   color: #d4956f !important;
 }
 
