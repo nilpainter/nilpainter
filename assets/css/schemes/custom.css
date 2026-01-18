@@ -209,6 +209,10 @@ body.list nav a,
 body.page nav a {
   color: #ffffff !important;
   font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  font-weight: 400 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
 body.home nav a:hover,
