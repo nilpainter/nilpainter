@@ -1,40 +1,38 @@
 {{ define "main" }}
 
+{{/* Full-width container */}}
 <div style="max-width: 1200px; margin: 0 auto; padding: 4rem 3rem;">
   
-  {{/* Project link if part of a series */}}
+  {{/* PAGE TITLE - Full width, left-aligned */}}
+  <h1 style="font-size: 2.5rem; font-weight: 300; line-height: 1.2; margin-bottom: 1rem;">
+    {{ .Title }}
+  </h1>
+  
+  {{/* Date - Full width, left-aligned */}}
+  <time datetime="{{ .Date.Format "2006-01-02" }}" style="display: block; color: #999; font-size: 0.875rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.05em;">
+    {{ .Date.Format "January 2, 2006" }}
+  </time>
+
+  {{/* Series banner - Narrow, centered */}}
   {{ if .Params.series }}
     {{ $seriesName := strings.ToLower (index .Params.series 0) }}
     {{ $projectPage := site.GetPage (printf "/projects/%s" (urlize $seriesName)) }}
     {{ if $projectPage }}
-      <div style="max-width: 50rem; margin: 0 auto 3rem; background: rgba(255, 140, 66, 0.15); border-left: 3px solid #ff8c42; padding: 1.25rem 1.5rem; border-radius: 4px;">
-        <p style="font-size: 0.95rem; margin: 0;">
+      <div class="project-banner" style="max-width: 50rem; margin: 0 auto 3rem;">
+        <p style="margin: 0;">
           This post is part of the project: 
-          <a href="{{ $projectPage.RelPermalink }}" style="color: #ff8c42; text-decoration: none; font-weight: 500;">
-            {{ $projectPage.Title }}
-          </a>
+          <a href="{{ $projectPage.RelPermalink }}">{{ $projectPage.Title }}</a>
         </p>
       </div>
     {{ end }}
   {{ end }}
 
-  {{/* Post Header - Centered, Narrow */}}
-  <header style="max-width: 50rem; margin: 0 auto 3rem;">
-    <time datetime="{{ .Date.Format "2006-01-02" }}" style="display: block; color: #999999; font-size: 0.875rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
-      {{ .Date.Format "January 2, 2006" }}
-    </time>
-    
-    <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 0; line-height: 1.2;">
-      {{ .Title }}
-    </h1>
-  </header>
-
-  {{/* Post Content - Centered, Narrow */}}
-  <div style="max-width: 50rem; margin: 0 auto; font-size: 1.0625rem; line-height: 1.8;">
+  {{/* CONTENT - Narrow, centered */}}
+  <div style="max-width: 50rem; margin: 0 auto;">
     {{ .Content }}
   </div>
 
-  {{/* Comments - Shared Partial */}}
+  {{/* COMMENTS - Narrow, centered */}}
   {{ partial "comments.html" . }}
 
 </div>
