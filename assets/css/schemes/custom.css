@@ -99,6 +99,22 @@ body:not(.home) header {
   padding: 1.5rem 3rem !important;
 }
 
+/* SITE TITLE - Elegant uppercase on dark homepage */
+body.home header a.text-base,
+body.home .main-menu a.text-base {
+  color: #e5e5e5 !important;
+  font-weight: 200 !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+body.home header a.text-base:hover,
+body.home .main-menu a.text-base:hover {
+  color: #ffffff !important;
+}
+
 body.home nav a {
   color: #cccccc !important;
 }
