@@ -1,227 +1,38 @@
 {{ define "main" }}
 
-<style>
-  /* Elegant dark homepage - refined and gallery-like */
-  body.home {
-    background-color: #0f0f0f !important;
-  }
+<div style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
   
-  body.home main {
-    background-color: #0f0f0f !important;
-  }
-  
-  /* Site title on dark homepage - elegant and refined */
-  body.home header a.text-base {
-    color: #e5e5e5 !important;
-    font-weight: 200 !important;
-    letter-spacing: 0.3em !important;
-    text-transform: uppercase !important;
-    font-size: 0.75rem !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  }
-  
-  body.home header a.text-base:hover {
-    color: #ffffff !important;
-  }
-  
-  /* Navigation on dark homepage - elegant */
-  body.home nav a {
-    color: #b8b8b8 !important;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 400;
-  }
-  
-  body.home nav a:hover {
-    color: #e5e5e5 !important;
-  }
-</style>
-
-{{/* Hero Section - Elegant and Refined */}}
-<section id="hero" style="position: relative; padding: 0; margin: 0; max-width: 100%; overflow: hidden; min-height: 85vh; display: flex; align-items: center; justify-content: center;">
-  {{/* Background with subtle blur */}}
-  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=2000'); background-size: cover; background-position: center; filter: blur(3px) brightness(0.25); transform: scale(1.05);"></div>
-    {{/* Darker gradient for better text contrast */}}
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.85) 100%);"></div>
+  <div style="text-align: center; margin-bottom: 4rem;">
+    <h1 style="font-size: 2rem; font-weight: 400; margin-bottom: 1rem;">Painting badly in the rain</h1>
+    <p style="color: #a89984; font-size: 1rem; line-height: 1.6;">Documenting the process of learning to paint. Mostly failures, occasionally something less terrible.</p>
   </div>
+
+  {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
   
-  {{/* Elegant centered content */}}
-  <div style="position: relative; z-index: 1; text-align: center; max-width: 800px; padding: 0 3rem;">
-    <h1 style="font-family: 'Baskerville', Georgia, serif; font-size: 5.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; color: #ffffff; letter-spacing: -0.02em; font-style: italic; text-shadow: 0 2px 20px rgba(0,0,0,0.6);">
-      Shelter from the Storm
-    </h1>
-    <div style="width: 60px; height: 1px; background: #d4956f; margin: 2rem auto;"></div>
-    <p style="color: #c4c4c4; font-size: 1.1rem; line-height: 1.7; margin-bottom: 3.5rem; font-family: Georgia, serif; font-weight: 300;">
-      A painter's journal of light, oils, and quiet progress
-    </p>
-    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-      <a href="/blog/" style="background: transparent; color: #e5e5e5 !important; padding: 0.9rem 2.5rem; border: 1px solid rgba(229, 229, 229, 0.4); border-radius: 0; font-size: 0.8rem; display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; text-decoration: none;">
-        Enter Journal
-      </a>
-      <a href="/projects/" style="background: transparent; color: #e5e5e5 !important; padding: 0.9rem 2.5rem; border: 1px solid rgba(229, 229, 229, 0.4); border-radius: 0; font-size: 0.8rem; display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; text-decoration: none;">
-        View Works
-      </a>
+  {{ if $pages }}
+    <h2 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; border-bottom: 1px solid #3c3836; padding-bottom: 0.5rem;">Recent Updates</h2>
+    
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+      {{ range first 10 $pages }}
+        <article style="border-bottom: 1px solid #3c3836; padding-bottom: 1.5rem;">
+          <a href="{{ .RelPermalink }}" style="text-decoration: none;">
+            <h3 style="font-size: 1.25rem; font-weight: 400; margin-bottom: 0.5rem; color: #ebdbb2;">{{ .Title }}</h3>
+            {{ if .Date }}<time style="font-size: 0.9rem; color: #928374;">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
+            {{ if .Summary }}<p style="margin-top: 0.75rem; color: #a89984; line-height: 1.6;">{{ .Summary }}</p>{{ end }}
+          </a>
+        </article>
+      {{ end }}
     </div>
-  </div>
-  
-  <style>
-    #hero a:hover {
-      background: rgba(212, 149, 111, 0.15) !important;
-      border-color: rgba(212, 149, 111, 0.6) !important;
-    }
-    
-    @media (max-width: 768px) {
-      #hero {
-        min-height: 70vh !important;
-      }
-      #hero h1 {
-        font-size: 3.5rem !important;
-      }
-      #hero p {
-        font-size: 1rem !important;
-      }
-      #hero > div {
-        padding: 0 2rem !important;
-      }
-      #hero a {
-        display: block !important;
-        margin: 0.75rem auto !important;
-        max-width: 250px;
-      }
-    }
-  </style>
-</section>
 
-{{/* Latest from the Easel */}}
-<section id="latest-easel" style="max-width: 1600px; margin: 0 auto; padding: 6rem 4rem; background-color: #0f0f0f;">
-  <div style="margin-bottom: 4rem; text-align: center;">
-    <h2 style="font-family: 'Baskerville', Georgia, serif; font-size: 2.5rem; font-weight: 300; color: #ffffff; font-style: italic; margin-bottom: 0.75rem;">Latest from the Easel</h2>
-    <div style="width: 60px; height: 1px; background: #d4956f; margin: 1.5rem auto;"></div>
-  </div>
+    <div style="margin-top: 3rem; text-align: center;">
+      <a href="/blog/" style="color: #d4956f; text-decoration: none; font-size: 0.95rem;">View all posts →</a>
+    </div>
+  {{ else }}
+    <div style="text-align: center; padding: 4rem 0; color: #928374;">
+      <p>Nothing here yet. Still figuring out how this works.</p>
+    </div>
+  {{ end }}
 
-  <div id="easel-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $limit := 3 }}
-    {{ range first $limit $pages }}
-      <a href="{{ .RelPermalink }}" class="image-card" style="display: block;">
-        {{/* Image with lazy loading */}}
-        {{ if .Params.image }}
-          <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" style="width: 100%; height: 320px; object-fit: cover; display: block; border-radius: 0;">
-        {{ else }}
-          <div style="width: 100%; height: 320px; background: rgba(255, 255, 255, 0.05); border-radius: 0;"></div>
-        {{ end }}
-        
-        {{/* Title underneath */}}
-        <h3 style="font-size: 1.35rem; font-weight: 400; margin-top: 1rem; line-height: 1.3;">
-          {{ .Title }}
-        </h3>
-      </a>
-    {{ end }}
-  </div>
-
-  {{/* Responsive styles */}}
-  <style>
-    #easel-grid article:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      border-color: rgba(212, 149, 111, 0.5);
-    }
-    
-    #easel-grid article:hover img {
-      transform: scale(1.02);
-      opacity: 0.9;
-    }
-    
-    @media (max-width: 1200px) {
-      #easel-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2.5rem !important;
-      }
-      #latest-easel {
-        padding: 4rem 2rem !important;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      #easel-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
-      #latest-easel {
-        padding: 3rem 1.5rem !important;
-      }
-      #latest-easel h2 {
-        font-size: 2rem !important;
-      }
-    }
-  </style>
-</section>
-
-{{/* Active Collections */}}
-<section id="active-collections" style="max-width: 1600px; margin: 0 auto; padding: 6rem 4rem; background-color: #0f0f0f;">
-  <div style="margin-bottom: 4rem; text-align: center;">
-    <h2 style="font-family: 'Baskerville', Georgia, serif; font-size: 2.5rem; font-weight: 300; color: #ffffff; font-style: italic; margin-bottom: 0.75rem;">Active Collections</h2>
-    <div style="width: 60px; height: 1px; background: #d4956f; margin: 1.5rem auto;"></div>
-  </div>
-  
-  <div id="collections-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
-    {{ $projects := where .Site.RegularPages "Section" "projects" }}
-    {{ range first 3 $projects }}
-      <a href="{{ .RelPermalink }}" class="image-card" style="display: block;">
-        {{/* Image with lazy loading */}}
-        {{ if .Params.image }}
-          <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" style="width: 100%; height: 420px; object-fit: cover; display: block; border-radius: 0;">
-        {{ else }}
-          <div style="width: 100%; height: 420px; background: rgba(255, 255, 255, 0.05); border-radius: 0;"></div>
-        {{ end }}
-        
-        {{/* Title underneath */}}
-        <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 1rem; line-height: 1.3;">
-          {{ .Title }}
-        </h3>
-      </a>
-    {{ end }}
-  </div>
-
-  {{/* Responsive styles */}}
-  <style>
-    #collections-grid article:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      border-color: rgba(212, 149, 111, 0.5);
-    }
-    
-    #collections-grid article:hover img {
-      transform: scale(1.02);
-      opacity: 0.9;
-    }
-    
-    @media (max-width: 1200px) {
-      #collections-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2.5rem !important;
-      }
-      #active-collections {
-        padding: 4rem 2rem !important;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      #collections-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
-      #active-collections {
-        padding: 3rem 1.5rem !important;
-      }
-      #active-collections h2 {
-        font-size: 2rem !important;
-      }
-    }
-  </style>
-</section>
+</div>
 
 {{ end }}
-
