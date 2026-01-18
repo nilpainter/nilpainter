@@ -1,76 +1,25 @@
 {{ define "main" }}
 
-<article style="max-width: 1000px; margin: 0 auto; padding: 4rem 3rem; background-color: transparent !important; background: none !important;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 4rem 3rem;">
   
   {{/* Page Header */}}
-  <header style="text-align: left; margin-bottom: 4rem; background: transparent !important; border: none !important; border-bottom: none !important;">
-    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic; border: none !important;">
+  <div style="margin-bottom: 4rem; text-align: left;">
+    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic;">
       {{ .Title }}
     </h1>
     {{ if .Params.description }}
-    <p style="color: #5a5a5a; font-size: 1.125rem; line-height: 1.7; font-family: Georgia, serif;">
+    <p style="color: #5a5a5a; font-size: 1.125rem; line-height: 1.7; max-width: 42rem; font-family: Georgia, serif;">
       {{ .Params.description }}
     </p>
     {{ end }}
-  </header>
+  </div>
 
   {{/* Content */}}
-  <div style="max-width: 42rem; margin: 0 auto; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background: transparent !important;">
+  <div style="max-width: 42rem; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a;">
     {{ .Content }}
   </div>
 
-</article>
-
-<style>
-  /* KILL WHITE BACKGROUNDS */
-  article {
-    background-color: transparent !important;
-    background: none !important;
-  }
-  
-  section.prose,
-  .prose {
-    background-color: transparent !important;
-    background: none !important;
-  }
-  
-  /* KILL ALL BORDERS AND SEPARATORS */
-  article header,
-  article h1,
-  article header h1 {
-    border: none !important;
-    border-bottom: none !important;
-    border-top: none !important;
-  }
-  
-  /* Style the content from markdown */
-  article h2 {
-    font-family: Georgia, serif;
-    font-size: 1.75rem;
-    font-weight: 400;
-    color: #2d2d2d;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  article p {
-    margin-bottom: 1.5rem;
-  }
-  
-  article strong {
-    color: #2d2d2d;
-    font-weight: 500;
-  }
-  
-  article a {
-    color: #c7653b;
-    text-decoration: none;
-  }
-  
-  article a:hover {
-    text-decoration: underline;
-  }
-</style>
+</div>
 
 {{ end }}
 
