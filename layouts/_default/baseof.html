@@ -9,11 +9,21 @@
   {{- partialCached "init.html" . -}}
 
   {{/* CHANGED: Removed max-w-7xl and most padding to allow full width */}}
-  {{/* Add .home class to body on homepage for dark theme */}}
+  {{/* Add page type classes for dark theme styling */}}
   {{ $bodyLayout := "flex flex-col h-screen leading-7 px-0" }}
   {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
   {{ $pageType := "" }}
-  {{ if .IsHome }}{{ $pageType = "home" }}{{ end }}
+  {{ if .IsHome }}
+    {{ $pageType = "home" }}
+  {{ else if eq .Kind "section" }}
+    {{ $pageType = "list" }}
+  {{ else if eq .Kind "page" }}
+    {{ if eq .Type "page" }}
+      {{ $pageType = "page" }}
+    {{ else }}
+      {{ $pageType = "single" }}
+    {{ end }}
+  {{ end }}
   <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ $pageType }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
     <div id="the-top" class="absolute flex self-center">
       <a
