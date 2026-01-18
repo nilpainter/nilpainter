@@ -141,6 +141,26 @@ nav a:hover {
   fill: var(--white) !important;
 }
 
+/* Mobile menu overlay - solid black background */
+#mobile-menu,
+.mobile-menu,
+[id*="mobile-menu"],
+nav[class*="mobile"],
+.main-menu-mobile,
+body > nav,
+header nav[class*="absolute"],
+header nav[class*="fixed"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop,
+[class*="backdrop"] {
+  background: #000000 !important;
+  opacity: 1 !important;
+}
+
 @media (max-width: 768px) {
   header {
     padding: 1rem 1.5rem !important;
