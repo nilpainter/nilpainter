@@ -198,6 +198,12 @@ img {
   margin: 2rem 0;
 }
 
+/* Image cards - space title away from image */
+.image-card h2,
+.image-card h3 {
+  margin-top: 1.5rem !important;
+}
+
 /* ===================================
    HOMEPAGE SPECIFIC
    =================================== */
