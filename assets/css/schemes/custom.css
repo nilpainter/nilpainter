@@ -11,7 +11,46 @@
   --border-subtle: #e8e4df;
 }
 
-/* FORCE CREAM BACKGROUND EVERYWHERE EXCEPT HOMEPAGE */
+/* DARK HOMEPAGE THEME - ALL TEXT WHITE/LIGHT */
+body.home,
+body.home html,
+body.home main,
+body.home #main-content {
+  background-color: #0f0f0f !important;
+  background: #0f0f0f !important;
+}
+
+body.home header {
+  background-color: #0f0f0f !important;
+  border-bottom-color: rgba(100, 100, 100, 0.3) !important;
+}
+
+/* ALL HOMEPAGE TEXT WHITE */
+body.home h1,
+body.home h2,
+body.home h3,
+body.home h4,
+body.home h5,
+body.home h6 {
+  color: #ffffff !important;
+}
+
+body.home p,
+body.home time,
+body.home span,
+body.home div {
+  color: #cccccc !important;
+}
+
+body.home a {
+  color: #ffffff !important;
+}
+
+body.home a:hover {
+  color: #d4956f !important;
+}
+
+/* FORCE CREAM BACKGROUND ON CONTENT PAGES ONLY */
 body:not(.home) html,
 body:not(.home),
 body:not(.home) #main-content,
@@ -27,20 +66,6 @@ body:not(.home) .bg-neutral,
 body:not(.home) .dark\:bg-neutral-800 {
   background-color: #faf8f5 !important;
   background: #faf8f5 !important;
-}
-
-/* DARK HOMEPAGE THEME */
-body.home,
-body.home html,
-body.home main,
-body.home #main-content {
-  background-color: #1a1a1a !important;
-  background: #1a1a1a !important;
-}
-
-body.home header {
-  background-color: #1a1a1a !important;
-  border-bottom-color: rgba(100, 100, 100, 0.3) !important;
 }
 
 /* Only white backgrounds on cards (homepage) */
