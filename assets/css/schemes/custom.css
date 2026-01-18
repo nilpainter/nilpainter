@@ -435,9 +435,13 @@ main {
 
 /* Mobile menu icon and search icon - make them dark and visible */
 @media (max-width: 768px) {
-  /* Mobile menu hamburger icon */
+  /* Mobile menu hamburger icon - AGGRESSIVE */
   .md\:hidden button svg,
-  .md\:hidden button path {
+  .md\:hidden button path,
+  .md\:hidden button line,
+  .md\:hidden svg,
+  .md\:hidden path,
+  .md\:hidden line {
     fill: #2d2d2d !important;
     stroke: #2d2d2d !important;
     color: #2d2d2d !important;
@@ -454,7 +458,22 @@ main {
   
   /* All icon buttons on mobile */
   header button svg,
-  header button path {
+  header button path,
+  header button line,
+  header svg,
+  header path,
+  header line {
+    fill: #2d2d2d !important;
+    stroke: #2d2d2d !important;
+  }
+  
+  /* Target burger menu specifically */
+  button[aria-label="Toggle menu"] svg,
+  button[aria-label="Toggle menu"] path,
+  button[aria-label="Toggle menu"] line,
+  .hamburger svg,
+  .hamburger path,
+  .hamburger line {
     fill: #2d2d2d !important;
     stroke: #2d2d2d !important;
   }
