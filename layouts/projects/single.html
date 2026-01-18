@@ -1,17 +1,17 @@
 {{ define "main" }}
 
-<div style="background-color: #faf8f5 !important; min-height: 100vh;">
-<article style="max-width: 1000px; margin: 0 auto; padding: 4rem 3rem; background-color: #faf8f5 !important; background: #faf8f5 !important;">
+<div>
+<article style="max-width: 1000px; margin: 0 auto; padding: 4rem 3rem;">
   
   {{/* Project Header */}}
-  <header style="margin-bottom: 4rem; border: none !important; background-color: #faf8f5 !important; background: #faf8f5 !important; text-align: left;">
-    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic; border: none !important; background-color: #faf8f5 !important; background: #faf8f5 !important; text-align: left;">
+  <header style="margin-bottom: 4rem; border: none !important; text-align: left;">
+    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; font-style: italic; border: none !important; text-align: left;">
       {{ .Title }}
     </h1>
   </header>
 
   {{/* Project Content (Concept, Challenge, Materials) */}}
-  <div style="max-width: 42rem; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a; background-color: #faf8f5 !important; background: #faf8f5 !important; margin-bottom: 4rem;">
+  <div style="max-width: 42rem; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; margin-bottom: 4rem;">
     {{ .Content }}
   </div>
 
