@@ -12,59 +12,60 @@
 </style>
 
 {{/* Hero Section with Background Image */}}
-<section id="hero" class="hero-section" style="position: relative; padding: 8rem 4rem; margin-bottom: 4rem; max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden; min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+<section id="hero" class="hero-section" style="position: relative; padding: 10rem 4rem; margin-bottom: 4rem; max-width: 100%; margin-left: auto; margin-right: auto; overflow: hidden; min-height: 75vh; display: flex; align-items: center; justify-content: center;">
   {{/* Background image with blur and vignette */}}
   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;">
     {{/* Replace this URL with your studio image path once uploaded to static/img/ */}}
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600'); background-size: cover; background-position: center; filter: blur(4px) brightness(0.6); transform: scale(1.1);"></div>
-    {{/* Vignette overlay */}}
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.8) 70%, rgba(26,26,26,0.95) 100%);"></div>
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600'); background-size: cover; background-position: center; filter: blur(8px) brightness(0.4); transform: scale(1.1);"></div>
+    {{/* Dark overlay for better text contrast */}}
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(20,20,20,0.75) 50%, rgba(10,10,10,0.9) 100%);"></div>
   </div>
   
   {{/* Content over background */}}
   <div style="position: relative; z-index: 1; text-align: center; max-width: 900px;">
-    <p style="color: #d4956f; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 1.5rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; opacity: 0.9;">A PAINTER'S QUIET LOG</p>
-    <h1 style="font-family: Georgia, serif; font-size: 4.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 1.5rem; color: #f5f5f5; text-shadow: 0 2px 20px rgba(0,0,0,0.5);">
-      Shelter from <em style="font-style: italic; color: #d4956f;">the Storm</em>.
+    <p style="color: #d4956f; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 2rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 400; opacity: 0.95;">A PAINTER'S QUIET LOG</p>
+    <h1 style="font-family: Georgia, serif; font-size: 5rem; font-weight: 200; line-height: 1.15; margin-bottom: 2rem; color: #ffffff; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);">
+      Shelter from <em style="font-style: italic; color: #d4956f; text-shadow: 0 4px 30px rgba(212,149,111,0.4);">the Storm</em>.
     </h1>
-    <p style="color: #d4d4d4; font-size: 1.125rem; line-height: 1.8; margin-bottom: 3rem; font-family: Georgia, serif; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 0 1px 10px rgba(0,0,0,0.7);">
+    <p style="color: #e5e5e5; font-size: 1.2rem; line-height: 1.8; margin-bottom: 3rem; font-family: Georgia, serif; max-width: 650px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 15px rgba(0,0,0,0.8);">
       A painter's quiet log of light, oils, and progress. Step inside to witness the journey from first sketch to final glaze.
     </p>
-    <a href="/blog/" style="background: rgba(212, 149, 111, 0.9); color: #1a1a1a !important; padding: 1rem 2.5rem; border-radius: 2rem; font-size: 0.95rem; display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; box-shadow: 0 4px 20px rgba(212, 149, 111, 0.3); transition: all 0.3s ease; text-decoration: none; margin-right: 1rem;">
+    <a href="/blog/" style="background: linear-gradient(135deg, #d4956f 0%, #c7863f 100%); color: #0a0a0a !important; padding: 1.1rem 3rem; border-radius: 3rem; font-size: 1rem; display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; box-shadow: 0 6px 30px rgba(212, 149, 111, 0.4), 0 2px 10px rgba(0,0,0,0.3); transition: all 0.3s ease; text-decoration: none; margin-right: 1.5rem;">
       Enter Journal →
     </a>
-    <a href="/projects/" style="color: #f5f5f5 !important; padding: 1rem 2rem; font-size: 0.95rem; display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; border: 1px solid rgba(245, 245, 245, 0.3); border-radius: 2rem; transition: all 0.3s ease; text-decoration: none; backdrop-filter: blur(10px);">
+    <a href="/projects/" style="color: #ffffff !important; padding: 1.1rem 2.5rem; font-size: 1rem; display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 3rem; transition: all 0.3s ease; text-decoration: none; backdrop-filter: blur(10px); background: rgba(255,255,255,0.05);">
       View Works
     </a>
   </div>
   
   <style>
     #hero a:first-of-type:hover {
-      background: rgba(212, 149, 111, 1) !important;
-      box-shadow: 0 6px 30px rgba(212, 149, 111, 0.5) !important;
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, #e5a67f 0%, #d7964f 100%) !important;
+      box-shadow: 0 8px 40px rgba(212, 149, 111, 0.6), 0 4px 15px rgba(0,0,0,0.4) !important;
+      transform: translateY(-3px);
     }
     
     #hero a:last-of-type:hover {
-      background: rgba(245, 245, 245, 0.1);
-      border-color: rgba(245, 245, 245, 0.6);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-3px);
     }
     
     @media (max-width: 768px) {
       #hero {
         padding: 5rem 2rem !important;
-        min-height: 60vh !important;
+        min-height: 65vh !important;
       }
       #hero h1 {
-        font-size: 2.75rem !important;
+        font-size: 3rem !important;
       }
       #hero p {
-        font-size: 1rem !important;
+        font-size: 1.05rem !important;
       }
       #hero a {
         display: block !important;
         margin: 0.75rem auto !important;
-        max-width: 250px;
+        max-width: 280px;
       }
     }
   </style>
