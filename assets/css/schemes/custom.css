@@ -35,6 +35,19 @@ body.page header {
   border-bottom-color: rgba(100, 100, 100, 0.3) !important;
 }
 
+/* WILDCARD - FORCE EVERYTHING WHITE */
+body.home *,
+body.list *,
+body.page * {
+  color: #ffffff !important;
+}
+
+body.home time,
+body.list time,
+body.page time {
+  color: #cccccc !important;
+}
+
 /* ALL TEXT WHITE ON DARK PAGES - NUCLEAR OPTION */
 body.home h1,
 body.list h1,
