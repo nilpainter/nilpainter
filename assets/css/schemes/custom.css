@@ -158,10 +158,14 @@ body:not(.home) header {
   padding: 1.5rem 3rem !important;
 }
 
-/* SITE TITLE - Elegant uppercase on dark homepage */
+/* SITE TITLE - White on dark pages, dark on warm single pages */
 body.home header a.text-base,
-body.home .main-menu a.text-base {
-  color: #e5e5e5 !important;
+body.list header a.text-base,
+body.page header a.text-base,
+body.home .main-menu a.text-base,
+body.list .main-menu a.text-base,
+body.page .main-menu a.text-base {
+  color: #ffffff !important;
   font-weight: 300 !important;
   letter-spacing: 0.25em !important;
   text-transform: uppercase !important;
@@ -170,20 +174,35 @@ body.home .main-menu a.text-base {
 }
 
 body.home header a.text-base:hover,
-body.home .main-menu a.text-base:hover {
-  color: #ffffff !important;
+body.list header a.text-base:hover,
+body.page header a.text-base:hover,
+body.home .main-menu a.text-base:hover,
+body.list .main-menu a.text-base:hover,
+body.page .main-menu a.text-base:hover {
+  color: #d4956f !important;
 }
 
-body.home nav a {
-  color: #cccccc !important;
+/* Nav links white on dark pages */
+body.home nav a,
+body.list nav a,
+body.page nav a {
+  color: #ffffff !important;
   font-size: 0.7rem !important;
 }
 
-body.home nav a:hover {
-  color: #f5f5f5 !important;
+body.home nav a:hover,
+body.list nav a:hover,
+body.page nav a:hover {
+  color: #d4956f !important;
 }
 
-body:not(.home) nav a {
+/* Nav links dark on single pages */
+body.single header a.text-base,
+body.single .main-menu a.text-base {
+  color: var(--text-dark) !important;
+}
+
+body.single nav a {
   color: var(--text-mid) !important;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -192,8 +211,15 @@ body:not(.home) nav a {
   font-weight: 400;
 }
 
-body:not(.home) nav a:hover {
+body.single nav a:hover {
   color: var(--text-dark) !important;
+}
+
+/* Header styling */
+body.single header {
+  background-color: var(--warm-white) !important;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.5rem 3rem !important;
 }
 
 /* Main content */
