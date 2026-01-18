@@ -198,10 +198,12 @@ img {
   margin: 2rem 0;
 }
 
-/* Image cards - space title away from image */
+/* Image cards - space title away from image with padding */
 .image-card h2,
 .image-card h3 {
   margin-top: 1.5rem !important;
+  margin-left: 0.5rem !important;
+  padding-left: 0.5rem !important;
 }
 
 /* ===================================
