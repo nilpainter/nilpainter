@@ -9,7 +9,7 @@ autoSwitchAppearance = false
 
 # Site info
 logo = ""
-description = "A painter's journal - shelter from the storm"
+description = "Painting badly in the rain"
 mainSections = ["blog", "projects"]
 
 # Disable search

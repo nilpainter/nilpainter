@@ -1,26 +1,22 @@
 ---
 title: "About"
-description: "A painter's pursuit of light and form"
+description: "Painting badly until I get better at it"
 layout: "simple"
 ---
 
-<p style="font-family: Georgia, serif; font-size: 1.25rem; line-height: 1.8; color: #5a5a5a; margin-bottom: 2rem; font-style: italic;">
-A painter's pursuit of light and form, documented through layers of pigment and thought.
-</p>
+I'm learning to paint. It's going about as well as you'd expect.
 
-## The Work
+This blog is where I document the process—mostly the failures, occasionally something that doesn't look terrible. No lofty aspirations, just showing up and trying not to make the same mistake twice.
 
-What began as curious experiments with color has evolved into a daily practice—a meditation on light, texture, and the quiet moments between intention and result. Each painting is a conversation between what I see and what refuses to be captured.
+## What I Do
 
-## The Studio
+I paint, mostly in oils. Sometimes it resembles what I was aiming for. Other times I've created an expensive mess that I'll probably paint over next week. I'm slowly figuring out why my colours go muddy and why everything I paint looks a bit wonky.
 
-My studio sits on the north coast, where the light changes by the hour and the smell of linseed oil mingles with salt air. It's a space of controlled chaos: half-finished canvases lean against the walls, tubes of paint accumulate like sediment, and the floor tells the story of every session.
+## Why This Blog
 
-## Process
-
-I work primarily in oils, building up layers over days and weeks. The underpainting sets the mood—often warm oranges and umbers that glow through subsequent glazes. There's something meditative about watching paint dry, about returning to a canvas with fresh eyes, about the slow accretion of form from chaos.
+Painting in a room by yourself gets a bit depressing after a while. This helps me pretend someone's paying attention, and maybe I'll look back in a year and see I've actually improved. If you're also muddling through, feel free to commiserate.
 
 ## Get in Touch
 
-If you'd like to discuss commissions, exhibitions, or just talk about painting, reach out at **studio@nilpainter.art**
+If you want to talk about painting, or just complain about how hard it is: **studio@nilpainter.art**
 
