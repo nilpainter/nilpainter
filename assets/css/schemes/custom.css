@@ -11,22 +11,36 @@
   --border-subtle: #e8e4df;
 }
 
-/* FORCE CREAM BACKGROUND EVERYWHERE */
-body,
-html,
-#main-content,
-main,
-article,
-section,
-div,
-.prose,
-.article-content,
-.max-w-prose,
-header,
-.bg-neutral,
-.dark\:bg-neutral-800 {
+/* FORCE CREAM BACKGROUND EVERYWHERE EXCEPT HOMEPAGE */
+body:not(.home) html,
+body:not(.home),
+body:not(.home) #main-content,
+body:not(.home) main,
+body:not(.home) article,
+body:not(.home) section,
+body:not(.home) div,
+body:not(.home) .prose,
+body:not(.home) .article-content,
+body:not(.home) .max-w-prose,
+body:not(.home) header,
+body:not(.home) .bg-neutral,
+body:not(.home) .dark\:bg-neutral-800 {
   background-color: #faf8f5 !important;
   background: #faf8f5 !important;
+}
+
+/* DARK HOMEPAGE THEME */
+body.home,
+body.home html,
+body.home main,
+body.home #main-content {
+  background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
+}
+
+body.home header {
+  background-color: #1a1a1a !important;
+  border-bottom-color: rgba(100, 100, 100, 0.3) !important;
 }
 
 /* Only white backgrounds on cards (homepage) */
@@ -78,20 +92,22 @@ a:hover {
   color: var(--accent-rust) !important;
 }
 
-/* Navigation - minimal, elegant */
-header {
+/* Navigation - minimal, elegant (light on content pages, dark on homepage) */
+body:not(.home) header {
   background-color: var(--warm-white) !important;
   border-bottom: 1px solid var(--border-subtle);
   padding: 1.5rem 3rem !important;
 }
 
-@media (max-width: 768px) {
-  header {
-    padding: 1.5rem 1.5rem !important;
-  }
+body.home nav a {
+  color: #cccccc !important;
 }
 
-nav a {
+body.home nav a:hover {
+  color: #f5f5f5 !important;
+}
+
+body:not(.home) nav a {
   color: var(--text-mid) !important;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -100,7 +116,7 @@ nav a {
   font-weight: 400;
 }
 
-nav a:hover {
+body:not(.home) nav a:hover {
   color: var(--text-dark) !important;
 }
 
@@ -433,48 +449,53 @@ main {
   margin-top: 1.25rem !important;
 }
 
-/* Mobile menu icon and search icon - make them dark and visible */
+/* Mobile menu icon and search icon - adapt to page theme */
 @media (max-width: 768px) {
-  /* Mobile menu hamburger icon - AGGRESSIVE */
-  .md\:hidden button svg,
-  .md\:hidden button path,
-  .md\:hidden button line,
-  .md\:hidden svg,
-  .md\:hidden path,
-  .md\:hidden line {
+  /* Dark icons on light pages */
+  body:not(.home) .md\:hidden button svg,
+  body:not(.home) .md\:hidden button path,
+  body:not(.home) .md\:hidden button line,
+  body:not(.home) .md\:hidden svg,
+  body:not(.home) .md\:hidden path,
+  body:not(.home) .md\:hidden line,
+  body:not(.home) #search-button svg,
+  body:not(.home) #search-button path,
+  body:not(.home) button[aria-label*="search" i] svg,
+  body:not(.home) button[aria-label*="search" i] path,
+  body:not(.home) header button svg,
+  body:not(.home) header button path,
+  body:not(.home) header button line,
+  body:not(.home) header svg,
+  body:not(.home) header path,
+  body:not(.home) header line,
+  body:not(.home) button[aria-label="Toggle menu"] svg,
+  body:not(.home) button[aria-label="Toggle menu"] path,
+  body:not(.home) button[aria-label="Toggle menu"] line,
+  body:not(.home) .hamburger svg,
+  body:not(.home) .hamburger path,
+  body:not(.home) .hamburger line {
     fill: #2d2d2d !important;
     stroke: #2d2d2d !important;
     color: #2d2d2d !important;
   }
   
-  /* Search icon on mobile */
-  #search-button svg,
-  #search-button path,
-  button[aria-label*="search" i] svg,
-  button[aria-label*="search" i] path {
-    fill: #2d2d2d !important;
-    stroke: #2d2d2d !important;
-  }
-  
-  /* All icon buttons on mobile */
-  header button svg,
-  header button path,
-  header button line,
-  header svg,
-  header path,
-  header line {
-    fill: #2d2d2d !important;
-    stroke: #2d2d2d !important;
-  }
-  
-  /* Target burger menu specifically */
-  button[aria-label="Toggle menu"] svg,
-  button[aria-label="Toggle menu"] path,
-  button[aria-label="Toggle menu"] line,
-  .hamburger svg,
-  .hamburger path,
-  .hamburger line {
-    fill: #2d2d2d !important;
-    stroke: #2d2d2d !important;
+  /* Light icons on dark homepage */
+  body.home .md\:hidden button svg,
+  body.home .md\:hidden button path,
+  body.home .md\:hidden button line,
+  body.home .md\:hidden svg,
+  body.home .md\:hidden path,
+  body.home .md\:hidden line,
+  body.home #search-button svg,
+  body.home #search-button path,
+  body.home header button svg,
+  body.home header button path,
+  body.home header button line,
+  body.home header svg,
+  body.home header path,
+  body.home header line {
+    fill: #f5f5f5 !important;
+    stroke: #f5f5f5 !important;
+    color: #f5f5f5 !important;
   }
 }
