@@ -31,14 +31,14 @@ body.page main,
 body.home #main-content,
 body.list #main-content,
 body.page #main-content {
-  background-color: #0f0f0f !important;
-  background: #0f0f0f !important;
+  background-color: #000000 !important;
+  background: #000000 !important;
 }
 
 body.home header,
 body.list header,
 body.page header {
-  background-color: #0f0f0f !important;
+  background-color: #000000 !important;
   border-bottom-color: rgba(100, 100, 100, 0.3) !important;
 }
 
