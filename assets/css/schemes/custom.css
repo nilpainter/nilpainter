@@ -248,12 +248,28 @@ pre {
   overflow-x: auto;
 }
 
-/* Images */
+/* Images - lazy loading with fade-in */
 img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
   margin: 2rem 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+img[loading="lazy"]:not([src]) {
+  opacity: 0;
+}
+
+img.lazyload,
+img.lazyloading {
+  opacity: 0.3;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+img.lazyloaded {
+  opacity: 1;
 }
 
 /* Image cards - space title away from image with padding */
