@@ -103,10 +103,10 @@ body:not(.home) header {
 body.home header a.text-base,
 body.home .main-menu a.text-base {
   color: #e5e5e5 !important;
-  font-weight: 200 !important;
-  letter-spacing: 0.3em !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.25em !important;
   text-transform: uppercase !important;
-  font-size: 0.75rem !important;
+  font-size: 1rem !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
